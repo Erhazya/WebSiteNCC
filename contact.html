@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NexaCyberCore - Contact</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #4f46e5;
+            --accent-color: #06b6d4;
+            --text-color: #f3f4f6;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --gradient: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-hero {
+            width: 100%;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background: var(--card-bg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item i {
+            font-size: 1.25rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100%;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .google-form-container {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .google-form-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+            border: none;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        footer {
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(26, 26, 26, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: all 0.3s ease-in-out;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu {
+                display: block;
+                z-index: 1001;
+            }
+
+            .contact-form {
+                min-height: 500px;
+            }
+
+            .google-form-container iframe {
+                min-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">NexaCyberCore</a></div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="info.html">À propos</a></li>
+                <li><a href="approche.html">Notre approche</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div>
+            <h1>Contactez-nous</h1>
+            <p>Nous sommes là pour répondre à toutes vos questions</p>
+        </div>
+    </section>
+
+    <section class="contact-content">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-user"></i>
+                    <span>Andy Longrée</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:0474641952">0474 64 19 52</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:andy.longree13@gmail.com">contact@nexacybercore.be</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Lun - Ven: 9h - 18h</span>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <div class="google-form-container">
+                    <iframe src="https://forms.gle/gWmfNr3pEXigqNu78?embedded=true"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <footer>
+            <p>&copy; 2025 NexaCyberCore. Tous droits réservés.</p>
+	    <p>Activitée hébergé par la coopérative <a href="https://smartbe.be/fr/">Smart</a></p>
+        </footer>
+
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = document.querySelector('.mobile-menu i');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>

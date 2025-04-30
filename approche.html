@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NexaCyberCore - Notre Approche</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <style>
+        /* Styles de base identiques à votre page d'accueil */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #4f46e5;
+            --accent-color: #06b6d4;
+            --text-color: #f3f4f6;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --gradient: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Styles header et navigation identiques */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        nav {
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Styles spécifiques à la page Notre Approche */
+        .approach-hero {
+            width: 100%;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background: var(--card-bg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .approach-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .approach-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .step-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 40px 0;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .values-section {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+.contact {
+    width: 100%;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.contact-item a {
+    color: inherit;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.contact-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.contact-item i {
+    font-size: 1.25rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex-shrink: 0;
+}
+
+footer {
+    width: 100%;
+    background: rgba(26, 26, 26, 0.95);
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-color);
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(26, 26, 26, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Ajouts pour la version mobile */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-section {
+        padding: 40px 20px;
+    }
+
+    .experience-timeline {
+        padding: 10px;
+    }
+
+    .timeline-item {
+        padding: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">NexaCyberCore</a></div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="info.html">À propos</a></li>
+                <li><a href="approche.html">Notre approche</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="approach-hero">
+        <div>
+            <h1>Notre Approche</h1>
+            <p>Une méthodologie éprouvée pour des solutions IT sur mesure</p>
+        </div>
+    </section>
+
+    <section class="approach-content">
+        <h2>Notre Processus</h2>
+        <div class="step-container">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h3>Écoute et Analyse</h3>
+                <p>Nous commençons par une écoute attentive de vos besoins et une analyse approfondie de votre environnement IT actuel pour identifier les opportunités d'amélioration.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h3>Proposition Sur Mesure</h3>
+                <p>Nous élaborons une solution personnalisée qui répond précisément à vos objectifs, en tenant compte de vos contraintes techniques et budgétaires.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h3>Mise en Œuvre</h3>
+                <p>Nous déployons la solution choisie avec un souci constant de la qualité et de la sécurité, en minimisant l'impact sur votre activité.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <h3>Suivi et Support</h3>
+                <p>Nous assurons un suivi régulier et un support réactif pour garantir la performance optimale de vos solutions IT dans la durée.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="approach-content">
+            <h2>Nos Valeurs</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Confiance</h3>
+                    <p>Une relation transparente et durable avec nos clients basée sur l'honnêteté et le professionnalisme.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Une veille technologique constante pour vous proposer les solutions les plus adaptées et performantes.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sécurité</h3>
+                    <p>La protection de vos données et de votre infrastructure est au cœur de nos préoccupations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Réactivité</h3>
+                    <p>Un support technique disponible et efficace pour répondre rapidement à vos besoins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="contact" class="contact">
+            <div class="contact-container">
+                <h2>Contactez-nous</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>
+                        <span>Andy Longrée</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:0474641952">0474 64 19 52</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:andy.longree13@gmail.com">contact@nexacybercore.be</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 NexaCyberCore. Tous droits réservés.</p>
+	    <p>Activitée hébergé par la coopérative <a href="https://smartbe.be/fr/">Smart</a></p>
+        </footer>
+    </div>
+
+
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = document.querySelector('.mobile-menu i');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>	
